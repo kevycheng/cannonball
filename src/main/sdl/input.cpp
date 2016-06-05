@@ -302,3 +302,12 @@ void Input::handle_joy(const uint8_t button, const bool is_pressed)
     if (button == pad_config[7])
         keys[VIEWPOINT] = is_pressed;
 }
+
+void Input::handle_external_input(ExternalInput external_input) {
+    keys[ACCEL] = external_input.is_accel_pressed;
+    keys[BRAKE] = external_input.is_brake_pressed;
+    keys[LEFT] = external_input.is_steer_left_pressed;
+    keys[RIGHT] = external_input.is_steer_right_pressed;
+    keys[START] = external_input.is_start_pressed;
+    keys[COIN] = external_input.is_coin_pressed;
+}

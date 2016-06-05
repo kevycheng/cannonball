@@ -30,7 +30,7 @@
 #include "romloader.hpp"
 #include "trackloader.hpp"
 #include "stdint.hpp"
-#include "main.hpp"
+#include "sharedresources.hpp"
 #include "setup.hpp"
 #include "engine/outrun.hpp"
 #include "frontend/config.hpp"
@@ -47,16 +47,6 @@
 
 // Initialize Shared Variables
 using namespace cannonball;
-
-int    cannonball::state       = STATE_BOOT;
-double cannonball::frame_ms    = 0;
-int    cannonball::frame       = 0;
-bool   cannonball::tick_frame  = true;
-int    cannonball::fps_counter = 0;
-
-#ifdef COMPILE_SOUND_CODE
-Audio cannonball::audio;
-#endif
 
 Menu* menu;
 Interface cannonboard;

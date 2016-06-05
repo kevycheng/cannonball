@@ -9,6 +9,7 @@
     See license.txt for more details.
 ***************************************************************************/
 
+#include <iostream>
 #include "engine/ohud.hpp"
 #include "engine/omusic.hpp"
 #include "engine/outils.hpp"
@@ -227,6 +228,10 @@ void OStats::init_next_level()
         ohud.draw_stage_number(0x110d76, cur_stage+1);
         // No need to redraw the stage info as that was a bug in the original game
     }
+}
+
+uint32_t OStats::get_score() {
+    return score;
 }
 
 // Time Tables

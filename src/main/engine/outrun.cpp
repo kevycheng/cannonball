@@ -8,7 +8,7 @@
 ***************************************************************************/
 
 #include "setup.hpp"
-#include "main.hpp"
+#include "../sharedresources.hpp"
 #include "trackloader.hpp"
 #include "../utils.hpp"
 #include "engine/oattractai.hpp"
@@ -1060,4 +1060,15 @@ void Outrun::select_course(bool jap, bool prototype)
 
     // Use Prototype Coconut Beach Track
     trackloader.stage_data[0] = prototype ? 0x3A : 0x3C;
+}
+
+void Outrun::reset() {
+    oferrari.car_ctrl_active = true; // 0 : Allow road updates
+    init_jump_table();
+    oinitengine.init(cannonball_mode == MODE_TTRIAL ? ttrial.level : 0);
+    game_state = GS_REINIT;          // Reinit game to attract mode
+}
+
+bool Outrun::is_game_over() {
+    return game_state >= GS_INIT_GAMEOVER && game_state <= GS_BEST2;
 }

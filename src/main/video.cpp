@@ -67,6 +67,8 @@ Video::~Video(void)
     delete sprite_layer;
     delete tile_layer;
     if (pixels) delete[] pixels;
+    if (pixels_copy_rgb) delete[] pixels_copy_rgb;
+    if (pixels_copy_greyscale) delete[] pixels_copy_greyscale;
     renderer->disable();
     delete renderer;
 }
@@ -79,6 +81,12 @@ int Video::init(Roms* roms, video_settings_t* settings)
     // Internal pixel array. The size of this is always constant
     if (pixels) delete[] pixels;
     pixels = new uint16_t[config.s16_width * config.s16_height];
+
+    // Storage of on-demand pixel array copy made available to exterior sources
+    if (pixels_copy_rgb) delete[] pixels_copy_rgb;
+    pixels_copy_rgb = new uint32_t[config.s16_width * config.s16_height];
+    if (pixels_copy_greyscale) delete[] pixels_copy_greyscale;
+    pixels_copy_greyscale = new uint32_t[config.s16_width * config.s16_height];
 
     // Convert S16 tiles to a more useable format
     tile_layer->init(roms->tiles.rom, config.video.hires != 0);
@@ -180,6 +188,24 @@ void Video::draw_frame()
 
     renderer->draw_frame(pixels);
     renderer->finalize_frame();
+}
+
+uint32_t* Video::get_pixels_rgb() {
+    renderer->convert_pixels_to_rgb(config.s16_width, config.s16_height, pixels, pixels_copy_rgb);
+    return pixels_copy_rgb;
+}
+
+uint32_t* Video::get_pixels_greyscale() {
+    renderer->convert_pixels_to_greyscale(config.s16_width, config.s16_height, pixels, pixels_copy_greyscale);
+    return pixels_copy_greyscale;
+}
+
+int Video::get_pixel_buffer_frame_width() {
+    return config.s16_width;
+}
+
+int Video::get_pixel_buffer_frame_height() {
+    return config.s16_height;
 }
 
 // ---------------------------------------------------------------------------

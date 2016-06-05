@@ -98,6 +98,8 @@ public:
     void update_score(uint32_t);
     void init_next_level();
 
+    uint32_t get_score();
+
 private:
     // Converted Stage Millisecond Value
     uint8_t ms_value;

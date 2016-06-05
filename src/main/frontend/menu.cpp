@@ -9,7 +9,7 @@
 // Boost string prediction
 #include <boost/algorithm/string/predicate.hpp>
 
-#include "main.hpp"
+#include "../sharedresources.hpp"
 #include "menu.hpp"
 #include "setup.hpp"
 #include "../utils.hpp"

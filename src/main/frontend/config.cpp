@@ -13,7 +13,7 @@
 #include <boost/property_tree/xml_parser.hpp>
 #include <iostream>
 
-#include "main.hpp"
+#include "../sharedresources.hpp"
 #include "config.hpp"
 #include "globals.hpp"
 #include "setup.hpp"

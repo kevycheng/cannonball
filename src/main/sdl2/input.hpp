@@ -11,6 +11,7 @@
 #pragma once
 
 #include <SDL.h>
+#include "external/externalinput.hpp"
 
 class Input
 {
@@ -67,6 +68,7 @@ public:
     void handle_joy_axis(SDL_JoyAxisEvent*);
     void handle_joy_down(SDL_JoyButtonEvent*);
     void handle_joy_up(SDL_JoyButtonEvent*);
+    void handle_external_input(ExternalInput external_input);
     void frame_done();
     bool is_pressed(presses p);
     bool is_pressed_clear(presses p);

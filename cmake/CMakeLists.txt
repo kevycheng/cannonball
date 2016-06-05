@@ -53,15 +53,15 @@ set(src_main
     "${main_cpp_base}/roms.hpp"
     "${main_cpp_base}/trackloader.hpp"
     "${main_cpp_base}/setup.hpp"
+	"${main_cpp_base}/sharedresources.hpp"
     "${main_cpp_base}/stdint.hpp"
-    "${main_cpp_base}/main.hpp"
     "${main_cpp_base}/video.hpp"
     "${main_cpp_base}/utils.hpp"
 
-    "${main_cpp_base}/main.cpp"
     "${main_cpp_base}/romloader.cpp"
     "${main_cpp_base}/trackloader.cpp"
     "${main_cpp_base}/roms.cpp"
+	"${main_cpp_base}/sharedresources.cpp"
     "${main_cpp_base}/video.cpp"
     "${main_cpp_base}/utils.cpp"
     )
@@ -252,8 +252,20 @@ set(src_engine_audio
     "${main_cpp_base}/engine/audio/osoundint.cpp"
     )
 
+set(src_executable_entrypoint
+		"${main_cpp_base}/main.hpp"
+		"${main_cpp_base}/main.cpp")
+
+set(src_library_interface
+		"${main_cpp_base}/external/externalinterface.hpp"
+		"${main_cpp_base}/external/externalinput.hpp"
+
+		"${main_cpp_base}/external/externalinterface.cpp")
+
 # Group files into relevant filters for Visual Studio build
 SOURCE_GROUP(src FILES ${src_main})
+SOURCE_GROUP(src FILES ${src_executable_entrypoint})
+SOURCE_GROUP(src\\external FILES ${src_library_interface})
 SOURCE_GROUP(src\\frontend FILES ${src_frontend})
 SOURCE_GROUP(src\\hwvideo FILES ${src_hwvideo})
 SOURCE_GROUP(src\\hwaudio FILES ${src_hwaudio})
@@ -265,6 +277,7 @@ SOURCE_GROUP(src\\engine\\audio FILES ${src_engine_audio})
 
 set(SRCS
     ${src_main}
+    ${src_entrypoint}
     ${src_frontend}
     ${src_hwvideo}
     ${src_hwaudio}
@@ -292,7 +305,22 @@ if(CANNONBOARD)
     add_definitions(-DCANNONBOARD)
 endif()
 
-add_executable(cannonball ${SRCS})
+set(SRCS_LIBRARY
+		${SRCS}
+		${src_library_interface})
+set(CMAKE_SHARED_LIBRARY_SUFFIX ".so")
+ADD_LIBRARY(cannonball SHARED ${SRCS_LIBRARY})
+
+set(SRCS_EXECUTABLE
+		${src_executable_entrypoint})
+add_executable(cannonball-exe ${SRCS_EXECUTABLE})
+target_link_libraries(cannonball-exe cannonball)
+
+if(SDL2)
+	find_library(SDL2_LIBRARY SDL2)
+	link_libraries(SDL2_LIBRARY)
+	target_link_libraries(cannonball ${SDL2_LIBRARY})
+endif()
 
 # Copy Configuration file to current build
 
@@ -313,3 +341,4 @@ configure_file(../res/tilemap.bin ./res/tilemap.bin
 configure_file(../res/tilepatch.bin ./res/tilepatch.bin
     COPYONLY 
 )
+

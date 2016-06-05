@@ -29,6 +29,8 @@ public:
 	hwsprites* sprite_layer;
     hwtiles* tile_layer;
 	uint16_t *pixels;
+	uint32_t *pixels_copy_rgb;
+	uint32_t *pixels_copy_greyscale;
 
     bool enabled;
 
@@ -39,6 +41,10 @@ public:
     void disable();
     int set_video_mode(video_settings_t* settings);
     void draw_frame();
+	uint32_t* get_pixels_rgb();
+	uint32_t* get_pixels_greyscale();
+	int get_pixel_buffer_frame_width();
+	int get_pixel_buffer_frame_height();
 
     void clear_text_ram();
     void write_text8(uint32_t, const uint8_t);

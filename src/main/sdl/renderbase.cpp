@@ -55,3 +55,24 @@ void RenderBase::convert_palette(uint32_t adr, uint32_t r, uint32_t g, uint32_t 
     rgb[adr + S16_PALETTE_ENTRIES] =
     rgb[adr + (S16_PALETTE_ENTRIES * 2)] = CURRENT_RGB();
 }
+
+void RenderBase::convert_pixels_to_rgb(int width, int height, uint16_t* source_pixels, uint32_t* converted_pixels_rbg) {
+    for (int i = 0; i < (width * height); i++)
+        *(converted_pixels_rbg++) = rgb[*(source_pixels++) & ((S16_PALETTE_ENTRIES * 3) - 1)];
+}
+
+void RenderBase::convert_pixels_to_greyscale(int width, int height, uint16_t* source_pixels, uint32_t* converted_pixels_greyscale) {
+    for (int i = 0; i < (width * height); i++) {
+        uint32_t rgb_value = rgb[*(source_pixels++) & ((S16_PALETTE_ENTRIES * 3) - 1)];
+        uint32_t blue = ((rgb_value & 0xFF0000) >> 16);
+        uint32_t green = ((rgb_value & 0xFF00) >> 8);
+        uint32_t red = ((rgb_value & 0xFF));
+        // http://stackoverflow.com/questions/596216/formula-to-determine-brightness-of-rgb-color?rq=1
+        uint32_t greyscale_value = (red + red + red + blue + blue + green + green + green) >> 3;
+        *(converted_pixels_greyscale++) = greyscale_value;
+    }
+}
+
+
+
+}

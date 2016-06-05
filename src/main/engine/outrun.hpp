@@ -222,6 +222,9 @@ public:
     void init_best_outrunners();
     void select_course(const bool jap, const bool prototype);
 
+	void reset();
+	bool is_game_over();
+
 private:
     //Interface* cannonboard;
 

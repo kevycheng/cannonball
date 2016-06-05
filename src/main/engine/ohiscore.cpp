@@ -7,7 +7,7 @@
 ***************************************************************************/
 
 #include "setup.hpp"
-#include "main.hpp"
+#include "../sharedresources.hpp"
 #include "engine/ohud.hpp"
 #include "engine/oinputs.hpp"
 #include "engine/ostats.hpp"
