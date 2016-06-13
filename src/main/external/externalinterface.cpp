@@ -31,6 +31,7 @@
 #include "../engine/ooutputs.hpp"
 #include "../engine/omusic.hpp"
 #include "../engine/ostats.hpp"
+#include "../engine/oinitengine.hpp"
 
 // Initialize Shared Variables
 using namespace cannonball;
@@ -216,6 +217,10 @@ int ExternalInterface::get_screen_height() {
 
 uint32_t ExternalInterface::get_score() {
     return ostats.get_score();
+}
+
+uint32_t ExternalInterface::get_speed() {
+    return oinitengine.car_increment;
 }
 
 bool ExternalInterface::is_game_over() {

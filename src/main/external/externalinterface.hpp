@@ -27,6 +27,7 @@ public:
     int get_screen_width();
     int get_screen_height();
     uint32_t get_score();
+    uint32_t get_speed();
     bool is_game_over();
 
     void destroy();
@@ -44,6 +45,7 @@ extern "C" {
     int ExternalInterface_getScreenWidth(ExternalInterface* externalInterface){ return externalInterface->get_screen_width(); }
     int ExternalInterface_getScreenHeight(ExternalInterface* externalInterface){ return externalInterface->get_screen_height(); }
     uint32_t ExternalInterface_getScore(ExternalInterface* externalInterface){ return externalInterface->get_score(); }
+    uint32_t ExternalInterface_getSpeed(ExternalInterface* externalInterface){ return externalInterface->get_speed(); }
     bool ExternalInterface_isGameOver(ExternalInterface* externalInterface){ return externalInterface->is_game_over(); }
 }
 
