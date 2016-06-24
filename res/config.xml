@@ -42,6 +42,9 @@
     
     <!-- Enable FPS Counter -->
     <fps_counter>0</fps_counter>
+
+    <!-- Disable FPS control -->
+    <fps_cap_disable>0</fps_cap_disable>
     
     <!-- Enhanced Widescreen Mode -->
     <widescreen>1</widescreen>

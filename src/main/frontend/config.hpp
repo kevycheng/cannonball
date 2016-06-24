@@ -46,6 +46,7 @@ struct video_settings_t
     int widescreen;
     int fps;
     int fps_count;
+    int fps_cap_disable;
     int hires;
     int filtering;
 };

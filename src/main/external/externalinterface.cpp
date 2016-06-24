@@ -179,7 +179,7 @@ void ExternalInterface::tick(ExternalInput external_input) {
     t = frame_time.get_ticks();
 
     // Cap Frame Rate: Sleep Remaining Frame Time
-    if (t < deltatime)
+    if (!config.video.fps_cap_disable && t < deltatime)
     {
         SDL_Delay((Uint32) (deltatime - t));
     }

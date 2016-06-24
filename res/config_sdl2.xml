@@ -42,6 +42,9 @@
     
     <!-- Enable FPS Counter -->
     <fps_counter>0</fps_counter>
+
+    <!-- Disable FPS control -->
+    <fps_cap_disable>0</fps_cap_disable>
     
     <!-- Enhanced Widescreen Mode -->
     <widescreen>1</widescreen>
@@ -136,9 +139,9 @@
     <!-- Keyboard Button Configuration. Easiest to configure with inbuilt menu. -->
     <keyconfig>
     	<up>1073741906</up>
-	<down>1073741905</down>
-	<left>1073741904</left>
-	<right>1073741903</right>
+	    <down>1073741905</down>
+	    <left>1073741904</left>
+	    <right>1073741903</right>
         <acc>122</acc>
         <brake>120</brake>
         <gear1>32</gear1>

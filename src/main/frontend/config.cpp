@@ -76,14 +76,15 @@ void Config::load(const std::string &filename)
     // Video Settings
     // ------------------------------------------------------------------------
    
-    video.mode       = pt_config.get("video.mode",               0); // Video Mode: Default is Windowed 
-    video.scale      = pt_config.get("video.window.scale",       2); // Video Scale: Default is 2x    
-    video.scanlines  = pt_config.get("video.scanlines",          0); // Scanlines
-    video.fps        = pt_config.get("video.fps",                2); // Default is 60 fps
-    video.fps_count  = pt_config.get("video.fps_counter",        0); // FPS Counter
-    video.widescreen = pt_config.get("video.widescreen",         1); // Enable Widescreen Mode
-    video.hires      = pt_config.get("video.hires",              0); // Hi-Resolution Mode
-    video.filtering  = pt_config.get("video.filtering",          0); // Open GL Filtering Mode
+    video.mode            = pt_config.get("video.mode",               0); // Video Mode: Default is Windowed
+    video.scale           = pt_config.get("video.window.scale",       2); // Video Scale: Default is 2x
+    video.scanlines       = pt_config.get("video.scanlines",          0); // Scanlines
+    video.fps             = pt_config.get("video.fps",                2); // Default is 60 fps
+    video.fps_count       = pt_config.get("video.fps_counter",        0); // FPS Counter
+    video.fps_cap_disable = pt_config.get("video.fps_cap_disable",    0); // Disable max frame rate cap
+    video.widescreen      = pt_config.get("video.widescreen",         1); // Enable Widescreen Mode
+    video.hires           = pt_config.get("video.hires",              0); // Hi-Resolution Mode
+    video.filtering       = pt_config.get("video.filtering",          0); // Open GL Filtering Mode
           
     set_fps(video.fps);
 
