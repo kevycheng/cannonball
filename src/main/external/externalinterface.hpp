@@ -20,6 +20,7 @@ public:
 
     void init();
     void reset();
+    void close();
     void tick(ExternalInput external_input);
 
     uint32_t* get_pixels_rgb();
@@ -29,8 +30,6 @@ public:
     uint32_t get_score();
     uint32_t get_speed();
     bool is_game_over();
-
-    void destroy();
 };
 
 // Expose these methods for posterior usage inside python
@@ -39,6 +38,7 @@ extern "C" {
     ExternalInterface* ExternalInterface_new(){ return new ExternalInterface(); }
     void ExternalInterface_init(ExternalInterface* externalInterface){ externalInterface->init(); }
     void ExternalInterface_reset(ExternalInterface* externalInterface){ externalInterface->reset(); }
+    void ExternalInterface_close(ExternalInterface* externalInterface){ externalInterface->close(); }
     void ExternalInterface_tick(ExternalInterface* externalInterface, ExternalInput externalInput){ externalInterface->tick(externalInput); }
     uint32_t* ExternalInterface_getPixelsRGB(ExternalInterface* externalInterface){ return externalInterface->get_pixels_rgb(); }
     uint32_t* ExternalInterface_getPixelsGreyscale(ExternalInterface* externalInterface){ return externalInterface->get_pixels_greyscale(); }

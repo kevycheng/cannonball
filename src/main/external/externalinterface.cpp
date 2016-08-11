@@ -36,24 +36,11 @@
 // Initialize Shared Variables
 using namespace cannonball;
 
-static void quit_func(int code)
-{
-#ifdef COMPILE_SOUND_CODE
-    audio.stop_audio();
-#endif
-    input.close();
-    SDL_Quit();
-    exit(code);
-}
-
-
 ExternalInterface external_interface;
-
 ExternalInterface::ExternalInterface() {
 }
 
 ExternalInterface::~ExternalInterface() {
-
 }
 
 void ExternalInterface::init() {
@@ -88,7 +75,7 @@ void ExternalInterface::init() {
 
         // Initialize SDL Video
         if (!video.init(&roms, &config.video))
-            quit_func(1);
+            close();
 
 #ifdef COMPILE_SOUND_CODE
         audio.init();
@@ -118,7 +105,7 @@ void ExternalInterface::init() {
     }
     else
     {
-        quit_func(1);
+        close();
     }
 }
 
@@ -126,12 +113,20 @@ void ExternalInterface::reset() {
     return outrun.reset();
 }
 
+void ExternalInterface::close() {
+#ifdef COMPILE_SOUND_CODE
+    audio.stop_audio();
+#endif
+    input.close();
+    video.disable();
+    SDL_Quit();
+}
+
 void ExternalInterface::tick(ExternalInput external_input) {
     // FPS Counter (If Enabled)
     Timer fps_count;
     int frame = 0;
     fps_count.start();
-
     // General Frame Timing
     Timer frame_time;
     int t;
@@ -225,10 +220,6 @@ uint32_t ExternalInterface::get_speed() {
 
 bool ExternalInterface::is_game_over() {
     return outrun.is_game_over();
-}
-
-void ExternalInterface::destroy() {
-    quit_func(0);
 }
 
 
