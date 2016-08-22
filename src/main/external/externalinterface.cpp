@@ -32,6 +32,7 @@
 #include "../engine/omusic.hpp"
 #include "../engine/ostats.hpp"
 #include "../engine/oinitengine.hpp"
+#include "../engine/oferrari.hpp"
 
 // Initialize Shared Variables
 using namespace cannonball;
@@ -216,6 +217,14 @@ uint32_t ExternalInterface::get_score() {
 
 uint32_t ExternalInterface::get_speed() {
     return oinitengine.car_increment;
+}
+
+uint32_t ExternalInterface::num_wheels_off_road() {
+    return oferrari.num_wheels_off_road();
+}
+
+bool ExternalInterface::is_crashed() {
+    return oferrari.is_crashed();
 }
 
 bool ExternalInterface::is_game_over() {

@@ -28,6 +28,7 @@
 #include "engine/ostats.hpp"
 #include "engine/outils.hpp"
 #include "engine/oferrari.hpp"
+#include "oferrari.hpp"
 
 OFerrari oferrari;
 
@@ -1792,3 +1793,16 @@ const uint16_t OFerrari::torque_lookup[] =
     0x6A5,
     0x66C, // Offset 0x1F - High Gear
 };
+
+bool OFerrari::is_crashed() {
+    return ocrash.crash_counter && ocrash.spin_control1 <= 0;
+}
+
+int OFerrari::num_wheels_off_road() {
+    if (oferrari.wheel_state  == oferrari.WHEELS_OFF)
+        return 4;
+    else if (oferrari.wheel_state  == oferrari.WHEELS_ON)
+        return 0;
+    else
+        return 2;
+}

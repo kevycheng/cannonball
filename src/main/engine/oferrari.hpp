@@ -214,6 +214,8 @@ public:
     void do_sound_score_slip();
     void shake();
     void do_skid();
+    bool is_crashed();
+    int num_wheels_off_road();
     
 private:
     // Max speed of car

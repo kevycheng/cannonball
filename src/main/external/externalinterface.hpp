@@ -29,6 +29,8 @@ public:
     int get_screen_height();
     uint32_t get_score();
     uint32_t get_speed();
+    uint32_t num_wheels_off_road();
+    bool is_crashed();
     bool is_game_over();
 };
 
@@ -46,6 +48,8 @@ extern "C" {
     int ExternalInterface_getScreenHeight(ExternalInterface* externalInterface){ return externalInterface->get_screen_height(); }
     uint32_t ExternalInterface_getScore(ExternalInterface* externalInterface){ return externalInterface->get_score(); }
     uint32_t ExternalInterface_getSpeed(ExternalInterface* externalInterface){ return externalInterface->get_speed(); }
+    uint32_t ExternalInterface_numWheelsOffRoad(ExternalInterface* externalInterface){ return externalInterface->num_wheels_off_road(); }
+    bool ExternalInterface_isCrashed(ExternalInterface* externalInterface){ return externalInterface->is_crashed(); }
     bool ExternalInterface_isGameOver(ExternalInterface* externalInterface){ return externalInterface->is_game_over(); }
 }
 
