@@ -40,6 +40,7 @@ const static uint8_t LAP_MS_60[] =
 
 OStats::OStats(void)
 {
+    lap_ms = config.engine.fix_timer ? LAP_MS_60 : LAP_MS_64;
 }
 
 OStats::~OStats(void)
