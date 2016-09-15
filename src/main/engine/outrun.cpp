@@ -1070,5 +1070,18 @@ void Outrun::reset() {
 }
 
 bool Outrun::is_game_over() {
-    return game_state >= GS_INIT_GAMEOVER && game_state <= GS_BEST2;
+    switch (game_state)
+    {
+        case GS_INIT_BONUS:
+        case GS_BONUS:
+        case GS_INIT_GAMEOVER:
+        case GS_GAMEOVER:
+        case GS_INIT_MAP:
+        case GS_MAP:
+        case GS_INIT_BEST2:
+        case GS_BEST2:
+            return true;
+        default:
+            return false;
+    }
 }
