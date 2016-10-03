@@ -54,7 +54,6 @@ int RomLoader::load(const char* filename, const int offset, const int length, co
     }
 
     CFRelease(resourcesURL);
-    chdir(bundlepath);
 #endif
 
     std::string path = "roms/";
@@ -110,7 +109,6 @@ int RomLoader::load_binary(const char* filename)
     }
 
     CFRelease(resourcesURL);
-    chdir(bundlepath);
 #endif
 
     // --------------------------------------------------------------------------------------------
