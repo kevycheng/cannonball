@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\src\main\romloader.cpp" />
+    <ClCompile Include="..\src\main\trackloader.cpp" />
+    <ClCompile Include="..\src\main\roms.cpp" />
+    <ClCompile Include="..\src\main\sharedresources.cpp" />
+    <ClCompile Include="..\src\main\video.cpp" />
+    <ClCompile Include="..\src\main\utils.cpp" />
+    <ClCompile Include="..\src\main\engine\oanimseq.cpp" />
+    <ClCompile Include="..\src\main\engine\oattractai.cpp" />
+    <ClCompile Include="..\src\main\engine\obonus.cpp" />
+    <ClCompile Include="..\src\main\engine\ocrash.cpp" />
+    <ClCompile Include="..\src\main\engine\oferrari.cpp" />
+    <ClCompile Include="..\src\main\engine\ohiscore.cpp" />
+    <ClCompile Include="..\src\main\engine\ohud.cpp" />
+    <ClCompile Include="..\src\main\engine\oinitengine.cpp" />
+    <ClCompile Include="..\src\main\engine\oinputs.cpp" />
+    <ClCompile Include="..\src\main\engine\olevelobjs.cpp" />
+    <ClCompile Include="..\src\main\engine\ologo.cpp" />
+    <ClCompile Include="..\src\main\engine\omap.cpp" />
+    <ClCompile Include="..\src\main\engine\omusic.cpp" />
+    <ClCompile Include="..\src\main\engine\ooutputs.cpp" />
+    <ClCompile Include="..\src\main\engine\opalette.cpp" />
+    <ClCompile Include="..\src\main\engine\oroad.cpp" />
+    <ClCompile Include="..\src\main\engine\osmoke.cpp" />
+    <ClCompile Include="..\src\main\engine\osprite.cpp" />
+    <ClCompile Include="..\src\main\engine\osprites.cpp" />
+    <ClCompile Include="..\src\main\engine\ostats.cpp" />
+    <ClCompile Include="..\src\main\engine\otiles.cpp" />
+    <ClCompile Include="..\src\main\engine\otraffic.cpp" />
+    <ClCompile Include="..\src\main\engine\outils.cpp" />
+    <ClCompile Include="..\src\main\engine\outrun.cpp" />
+    <ClCompile Include="..\src\main\engine\audio\osound.cpp" />
+    <ClCompile Include="..\src\main\engine\audio\osoundint.cpp" />
+    <ClCompile Include="..\src\main\external\externalinterface.cpp" />
+    <ClCompile Include="..\src\main\cannonboard\asyncserial.cpp">
+      <Filter>src\cannonboard</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\main\cannonboard\interface.cpp">
+      <Filter>src\cannonboard</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\main\directx\ffeedback.cpp">
+      <Filter>src\directx</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\main\frontend\cabdiag.cpp">
+      <Filter>src\frontend</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\main\frontend\menu.cpp">
+      <Filter>src\frontend</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\main\frontend\ttrial.cpp">
+      <Filter>src\frontend</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\main\frontend\config.cpp">
+      <Filter>src\frontend</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\main\hwaudio\segapcm.cpp">
+      <Filter>src\hwaudio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\main\hwaudio\soundchip.cpp">
+      <Filter>src\hwaudio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\main\hwaudio\ym2151.cpp">
+      <Filter>src\hwaudio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\main\hwvideo\hwsprites.cpp">
+      <Filter>src\hwvideo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\main\hwvideo\hwroad.cpp">
+      <Filter>src\hwvideo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\main\hwvideo\hwtiles.cpp">
+      <Filter>src\hwvideo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\main\sdl\audio.cpp">
+      <Filter>src\sdl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\main\sdl\input.cpp">
+      <Filter>src\sdl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\main\sdl\renderbase.cpp">
+      <Filter>src\sdl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\main\sdl\rendergl.cpp">
+      <Filter>src\sdl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\main\sdl\timer.cpp">
+      <Filter>src\sdl</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="globals.hpp">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="setup.hpp">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="stdint.hpp">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\main\romloader.hpp" />
+    <ClInclude Include="..\src\main\roms.hpp" />
+    <ClInclude Include="..\src\main\trackloader.hpp" />
+    <ClInclude Include="..\src\main\sharedresources.hpp" />
+    <ClInclude Include="..\src\main\video.hpp" />
+    <ClInclude Include="..\src\main\utils.hpp" />
+    <ClInclude Include="..\src\main\engine\oaddresses.hpp" />
+    <ClInclude Include="..\src\main\engine\oanimseq.hpp" />
+    <ClInclude Include="..\src\main\engine\oanimsprite.hpp" />
+    <ClInclude Include="..\src\main\engine\oattractai.hpp" />
+    <ClInclude Include="..\src\main\engine\obonus.hpp" />
+    <ClInclude Include="..\src\main\engine\ocrash.hpp" />
+    <ClInclude Include="..\src\main\engine\oentry.hpp" />
+    <ClInclude Include="..\src\main\engine\oferrari.hpp" />
+    <ClInclude Include="..\src\main\engine\ohiscore.hpp" />
+    <ClInclude Include="..\src\main\engine\ohud.hpp" />
+    <ClInclude Include="..\src\main\engine\oinitengine.hpp" />
+    <ClInclude Include="..\src\main\engine\oinputs.hpp" />
+    <ClInclude Include="..\src\main\engine\olevelobjs.hpp" />
+    <ClInclude Include="..\src\main\engine\ologo.hpp" />
+    <ClInclude Include="..\src\main\engine\omap.hpp" />
+    <ClInclude Include="..\src\main\engine\omusic.hpp" />
+    <ClInclude Include="..\src\main\engine\ooutputs.hpp" />
+    <ClInclude Include="..\src\main\engine\opalette.hpp" />
+    <ClInclude Include="..\src\main\engine\oroad.hpp" />
+    <ClInclude Include="..\src\main\engine\osmoke.hpp" />
+    <ClInclude Include="..\src\main\engine\osprite.hpp" />
+    <ClInclude Include="..\src\main\engine\osprites.hpp" />
+    <ClInclude Include="..\src\main\engine\ostats.hpp" />
+    <ClInclude Include="..\src\main\engine\otiles.hpp" />
+    <ClInclude Include="..\src\main\engine\otraffic.hpp" />
+    <ClInclude Include="..\src\main\engine\outils.hpp" />
+    <ClInclude Include="..\src\main\engine\outrun.hpp" />
+    <ClInclude Include="..\src\main\engine\ozoom_lookup.hpp" />
+    <ClInclude Include="..\src\main\engine\audio\commands.hpp" />
+    <ClInclude Include="..\src\main\engine\audio\osound.hpp" />
+    <ClInclude Include="..\src\main\engine\audio\osoundint.hpp" />
+    <ClInclude Include="..\src\main\engine\audio\osoundadr.hpp" />
+    <ClInclude Include="..\src\main\external\externalinterface.hpp" />
+    <ClInclude Include="..\src\main\external\externalinput.hpp" />
+    <ClInclude Include="..\src\main\cannonboard\asyncserial.hpp">
+      <Filter>src\cannonboard</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\main\cannonboard\interface.hpp">
+      <Filter>src\cannonboard</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\main\directx\ffeedback.hpp">
+      <Filter>src\directx</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\main\frontend\cabdiag.hpp">
+      <Filter>src\frontend</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\main\frontend\menu.hpp">
+      <Filter>src\frontend</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\main\frontend\ttrial.hpp">
+      <Filter>src\frontend</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\main\frontend\config.hpp">
+      <Filter>src\frontend</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\main\hwaudio\segapcm.hpp">
+      <Filter>src\hwaudio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\main\hwaudio\soundchip.hpp">
+      <Filter>src\hwaudio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\main\hwaudio\ym2151.hpp">
+      <Filter>src\hwaudio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\main\hwvideo\hwroad.hpp">
+      <Filter>src\hwvideo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\main\hwvideo\hwsprites.hpp">
+      <Filter>src\hwvideo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\main\hwvideo\hwtiles.hpp">
+      <Filter>src\hwvideo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\main\sdl\audio.hpp">
+      <Filter>src\sdl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\main\sdl\input.hpp">
+      <Filter>src\sdl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\main\sdl\renderbase.hpp">
+      <Filter>src\sdl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\main\sdl\rendergl.hpp">
+      <Filter>src\sdl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\main\sdl\timer.hpp">
+      <Filter>src\sdl</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\res\cannonball.rc">
+      <Filter>Source Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="src\engine\audio">
+      <UniqueIdentifier>{D85CFD00-20C3-313C-80E7-CB66368B7A2F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{232384CD-F09E-35AC-B1BC-D5000409F89E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{45FB2DF7-6A83-3E04-AFC7-EBE1BC94B3AD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\external">
+      <UniqueIdentifier>{11317A23-B280-3B6F-AFA0-935E78C0E8D1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\frontend">
+      <UniqueIdentifier>{09F21B9E-2BF1-34FE-8CD0-F078E16B32B5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\hwvideo">
+      <UniqueIdentifier>{C8AF1190-3A3E-3C38-AFBC-B44DAA566CE0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\hwaudio">
+      <UniqueIdentifier>{25F3C1D0-2A96-3A5C-B303-6326D727D6C5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\sdl">
+      <UniqueIdentifier>{3236D4FC-CA0A-3739-AE78-2958CDE30AC0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\directx">
+      <UniqueIdentifier>{D778B0F3-C5B9-3031-8AF4-B9FA44610DA2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\cannonboard">
+      <UniqueIdentifier>{6551AF53-A738-3737-B45E-F45DBCB4A31C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\engine">
+      <UniqueIdentifier>{DD2149ED-DF66-3114-8B18-E2795790B0E6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

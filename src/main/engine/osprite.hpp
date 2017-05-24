@@ -9,6 +9,7 @@
 ***************************************************************************/
 
 #include "stdint.hpp" 
+#include <algorithm>
 
 class osprite
 {

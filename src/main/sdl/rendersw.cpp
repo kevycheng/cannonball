@@ -9,6 +9,7 @@
 ***************************************************************************/
 
 #include <iostream>
+#include <algorithm>
 
 #include "rendersw.hpp"
 #include "frontend/config.hpp"
