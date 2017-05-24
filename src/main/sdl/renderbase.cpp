@@ -72,7 +72,3 @@ void RenderBase::convert_pixels_to_greyscale(int width, int height, uint16_t* so
         *(converted_pixels_greyscale++) = greyscale_value;
     }
 }
-
-
-
-}

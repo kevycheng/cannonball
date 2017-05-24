@@ -11,6 +11,7 @@
 ***************************************************************************/
 
 #include <iostream>
+#include <algorithm>
 
 #include "rendergl.hpp"
 #include "frontend/config.hpp"

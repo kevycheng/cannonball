@@ -12,7 +12,13 @@
 
 #include "externalinput.hpp"
 
-class ExternalInterface
+#ifdef KV_EXPORTS
+#define KV_API __declspec(dllexport)
+#else
+#define KV_API __declspec(dllimport)
+#endif
+
+class KV_API ExternalInterface
 {
 public:
     ExternalInterface();
@@ -36,21 +42,26 @@ public:
 
 // Expose these methods for posterior usage inside python
 // Since ctypes can only talk to C functions, you need to provide those declaring them as extern "C"
-extern "C" {
-    ExternalInterface* ExternalInterface_new(){ return new ExternalInterface(); }
-    void ExternalInterface_init(ExternalInterface* externalInterface){ externalInterface->init(); }
-    void ExternalInterface_reset(ExternalInterface* externalInterface){ externalInterface->reset(); }
-    void ExternalInterface_close(ExternalInterface* externalInterface){ externalInterface->close(); }
-    void ExternalInterface_tick(ExternalInterface* externalInterface, ExternalInput externalInput){ externalInterface->tick(externalInput); }
-    uint32_t* ExternalInterface_getPixelsRGB(ExternalInterface* externalInterface){ return externalInterface->get_pixels_rgb(); }
-    uint32_t* ExternalInterface_getPixelsGreyscale(ExternalInterface* externalInterface){ return externalInterface->get_pixels_greyscale(); }
-    int ExternalInterface_getScreenWidth(ExternalInterface* externalInterface){ return externalInterface->get_screen_width(); }
-    int ExternalInterface_getScreenHeight(ExternalInterface* externalInterface){ return externalInterface->get_screen_height(); }
-    uint32_t ExternalInterface_getScore(ExternalInterface* externalInterface){ return externalInterface->get_score(); }
-    uint32_t ExternalInterface_getSpeed(ExternalInterface* externalInterface){ return externalInterface->get_speed(); }
-    uint32_t ExternalInterface_numWheelsOffRoad(ExternalInterface* externalInterface){ return externalInterface->num_wheels_off_road(); }
-    bool ExternalInterface_isCrashed(ExternalInterface* externalInterface){ return externalInterface->is_crashed(); }
-    bool ExternalInterface_isGameOver(ExternalInterface* externalInterface){ return externalInterface->is_game_over(); }
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+	KV_API ExternalInterface* ExternalInterface_new();
+	KV_API void ExternalInterface_init(ExternalInterface* externalInterface);
+	KV_API void ExternalInterface_reset(ExternalInterface* externalInterface);
+	KV_API void ExternalInterface_close(ExternalInterface* externalInterface);
+	KV_API void ExternalInterface_tick(ExternalInterface* externalInterface, ExternalInput externalInput);
+	KV_API uint32_t* ExternalInterface_getPixelsRGB(ExternalInterface* externalInterface);
+	KV_API uint32_t* ExternalInterface_getPixelsGreyscale(ExternalInterface* externalInterface);
+	KV_API int ExternalInterface_getScreenWidth(ExternalInterface* externalInterface);
+	KV_API int ExternalInterface_getScreenHeight(ExternalInterface* externalInterface);
+	KV_API uint32_t ExternalInterface_getScore(ExternalInterface* externalInterface);
+	KV_API uint32_t ExternalInterface_getSpeed(ExternalInterface* externalInterface);
+	KV_API uint32_t ExternalInterface_numWheelsOffRoad(ExternalInterface* externalInterface);
+	KV_API bool ExternalInterface_isCrashed(ExternalInterface* externalInterface);
+	KV_API bool ExternalInterface_isGameOver(ExternalInterface* externalInterface);
+#ifdef __cplusplus
 }
+#endif
 
-extern ExternalInterface external_interface;
+extern KV_API ExternalInterface external_interface;

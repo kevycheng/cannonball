@@ -231,4 +231,25 @@ bool ExternalInterface::is_game_over() {
     return outrun.is_game_over();
 }
 
+// KV_API
+KV_API ExternalInterface* ExternalInterface_new()
+{ 
+	return new ExternalInterface(); 
+}
 
+KV_API void ExternalInterface_init(ExternalInterface* externalInterface){ externalInterface->init(); }
+KV_API void ExternalInterface_reset(ExternalInterface* externalInterface){ externalInterface->reset(); }
+KV_API void ExternalInterface_close(ExternalInterface* externalInterface){ externalInterface->close(); }
+KV_API void ExternalInterface_tick(ExternalInterface* externalInterface, ExternalInput externalInput)
+{ 
+	externalInterface->tick(externalInput); 
+}
+KV_API uint32_t* ExternalInterface_getPixelsRGB(ExternalInterface* externalInterface){ return externalInterface->get_pixels_rgb(); }
+KV_API uint32_t* ExternalInterface_getPixelsGreyscale(ExternalInterface* externalInterface){ return externalInterface->get_pixels_greyscale(); }
+KV_API int ExternalInterface_getScreenWidth(ExternalInterface* externalInterface){ return externalInterface->get_screen_width(); }
+KV_API int ExternalInterface_getScreenHeight(ExternalInterface* externalInterface){ return externalInterface->get_screen_height(); }
+KV_API uint32_t ExternalInterface_getScore(ExternalInterface* externalInterface){ return externalInterface->get_score(); }
+KV_API uint32_t ExternalInterface_getSpeed(ExternalInterface* externalInterface){ return externalInterface->get_speed(); }
+KV_API uint32_t ExternalInterface_numWheelsOffRoad(ExternalInterface* externalInterface){ return externalInterface->num_wheels_off_road(); }
+KV_API bool ExternalInterface_isCrashed(ExternalInterface* externalInterface){ return externalInterface->is_crashed(); }
+KV_API bool ExternalInterface_isGameOver(ExternalInterface* externalInterface){ return externalInterface->is_game_over(); }
